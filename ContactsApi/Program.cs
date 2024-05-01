@@ -10,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Debug().WriteTo.Console().CreateLogger();
+    .ReadFrom.Configuration(builder.Configuration).CreateLogger();
 
 var app = builder.Build();
 
