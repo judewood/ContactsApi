@@ -4,6 +4,6 @@ namespace ContactsApi.Services
 {
     public interface IContactService
     {
-        Task<ContactRecord?> GetContactAsync(string id);
+        Task<(ContactRecord?, int)> GetContactAsync(string id);
     }
 }

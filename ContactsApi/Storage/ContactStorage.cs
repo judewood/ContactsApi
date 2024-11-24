@@ -4,12 +4,11 @@ namespace ContactsApi.Storage
 {
     public class ContactStorage : IContactStorage
     {
-        public async Task<ContactsApi.Models.ContactRecord> GetContactAsync<Contact>(string id)
+        public async Task<ContactRecord?> GetContactAsync(string id)
         {
-            var c = await Task.Run(() => getContact());
+            var c = await Task.Run(getContact);
             return c;
         }
-
 
         private ContactRecord getContact()
         {
