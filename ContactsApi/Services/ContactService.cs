@@ -7,13 +7,18 @@ namespace ContactsApi.Services
     {
         private readonly IContactStorage _contactStorage = contactStorage;
 
-        public async Task<ContactRecord?> GetContactAsync(string id)
+        public async Task<(ContactRecord?, int)> GetContactAsync(string id)
         {
             if (string.IsNullOrWhiteSpace(id))
             {
-                return null;
+                return (null, 400);
             }
-            return await _contactStorage.GetContactAsync<ContactRecord>(id: "abc");
+            var result = await _contactStorage.GetContactAsync(id: "abc");
+            if (result is null)
+            {
+                return (null, 204);
+            }
+            return (result, 200);
         }
     }
 }
