@@ -4,3 +4,6 @@ GET {{ContactsApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{ContactsApi_HostAddress}}/contact/
+Accept: application/json
