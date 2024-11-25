@@ -1,10 +1,5 @@
 @ContactsApi_HostAddress = http://localhost:5258
 @Contact_Id = 1
 
-GET {{ContactsApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
-
 GET {{ContactsApi_HostAddress}}/contact/{{Contact_Id}}
 Accept: application/json
